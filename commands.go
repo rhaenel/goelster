@@ -69,7 +69,7 @@ func readRegister(
 		return nil
 	case frm := <-c:
 		// result
-		duration := time.Since(startTime)
+		//duration := time.Since(startTime)
 		//log.Printf("CAN read took: %.fms", duration.Seconds()*1e3)
 		return &frm
 	}
