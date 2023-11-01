@@ -61,7 +61,7 @@ func readRegister(
 	bus.Subscribe(handler)
 	defer bus.Unsubscribe(handler)
 
-	startTime := time.Now()
+	//startTime := time.Now()
 	bus.Publish(*frm)
 	select {
 	case <-time.After(250 * time.Millisecond):
