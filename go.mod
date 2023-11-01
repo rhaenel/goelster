@@ -1,4 +1,4 @@
-module github.com/andig/goelster
+module github.com/rhaenel/goelster
 
 go 1.21.3
 
