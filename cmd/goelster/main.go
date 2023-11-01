@@ -11,7 +11,7 @@ import (
 	"github.com/brutella/can"
 	"github.com/urfave/cli"
 
-	. "github.com/andig/goelster"
+	. "github.com/rhaenel/goelster"
 )
 
 type Command int
