@@ -64,13 +64,13 @@ func readRegister(
 	startTime := time.Now()
 	bus.Publish(*frm)
 	select {
-	case <-time.After(100 * time.Millisecond):
+	case <-time.After(250 * time.Millisecond):
 		// timeout
 		return nil
 	case frm := <-c:
 		// result
 		duration := time.Since(startTime)
-		log.Printf("CAN read took: %.fms", duration.Seconds()*1e3)
+		//log.Printf("CAN read took: %.fms", duration.Seconds()*1e3)
 		return &frm
 	}
 }
