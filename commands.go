@@ -48,7 +48,7 @@ func createReadFrame(sender uint16, receiver uint16, r *ElsterReading) *can.Fram
 	return &frm
 }
 
-func readRegister(
+func ReadRegister(
 	bus *can.Bus,
 	sender uint16,
 	receiver uint16,
@@ -80,7 +80,7 @@ func CanScan(bus *can.Bus, sender uint16, receiver uint16) {
 	defer bus.Disconnect()
 
 	for _, r := range ElsterReadings {
-		if frm := readRegister(bus, sender, receiver, r); frm != nil {
+		if frm := ReadRegister(bus, sender, receiver, r); frm != nil {
 			_, payload := Payload(frm.Data[:])
 			val := DecodeValue(payload, r.Type)
 
@@ -104,7 +104,7 @@ func CanRead(bus *can.Bus, sender uint16, receiver uint16, register uint16) {
 	go bus.ConnectAndPublish()
 	defer bus.Disconnect()
 
-	frm := readRegister(bus, sender, receiver, r)
+	frm := ReadRegister(bus, sender, receiver, r)
 	if frm == nil {
 		os.Exit(1)
 	}
