@@ -72,7 +72,7 @@ func DecodeValue(b []byte, t ElsterType) interface{} {
 
 	switch t {
 	case et_little_endian:
-		return float64(binary.LittleEndian.Uint16(b))
+		return binary.LittleEndian.Uint16(b)
 	case et_dec_val:
 		return float64(binary.BigEndian.Uint16(b)) / 10
 	case et_cent_val:

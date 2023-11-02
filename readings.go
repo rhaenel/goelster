@@ -93,7 +93,7 @@ func init() {
 		{"KOLLEKTORTEMP_2", 0x0036, et_dec_val},
 		{"MULTIFUNKTION_ISTTEMP", 0x0051, et_dec_val},
 		{"BRENNER", 0x0052, et_little_endian},
-		{"HZK_PUMPE", 0x0053, 0},
+		{"HZK_PUMPE", 0x0053, et_little_endian},
 		{"SPL_PUMPE", 0x0055, 0},
 		{"DCF", 0x0056, et_little_endian},
 		{"MISCHER_AUF", 0x0057, et_little_endian},
@@ -105,7 +105,7 @@ func init() {
 		{"TEILVORRANG_WW", 0x005e, 0},
 		{"SPEICHERBEDARF", 0x005f, 0},
 		{"SCHALTFKT_IWS", 0x0060, 0},
-		{"ABTAUUNGAKTIV", 0x0061, 0},
+		{"ABTAUUNGAKTIV", 0x0061, et_little_endian},
 		// nach chriss1980 / knx forum
 		// Verdichter 1:        0x0001
 		// DHC 1:               0x0002
@@ -189,7 +189,7 @@ func init() {
 		// Tagbetrieb     0x0300
 		// Absenkbetrieb  0x0400
 		// Warmwasser     0x0500
-		{"PROGRAMMSCHALTER", 0x0112, et_betriebsart},
+		{"PROGRAMMSCHALTER", 0x0112, et_little_endian},
 		// GERMAN         0x0000
 		// ENGISH         0x0100
 		// FRANZ          0x0200 ...
